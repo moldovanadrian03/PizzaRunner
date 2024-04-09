@@ -1,4 +1,0 @@
-repository "PizzaRunner@aditreilinii@cloud"
-  path "/"
-    br "/main"
-    co "/main"
