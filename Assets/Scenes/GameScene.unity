@@ -65705,9 +65705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f6b01dd6ab25441b55afa659199e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 0
+  minSpeed: 0.2
   maxSpeed: 50
-  minPitch: 0.2
+  minPitch: 0.4
   maxPitch: 5
 --- !u!4 &975909876567913179
 Transform:
