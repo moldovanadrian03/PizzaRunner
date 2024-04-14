@@ -7,6 +7,7 @@ public class ArrowRotator : MonoBehaviour
     // Start is called before the first frame update
 
     public Transform _Target;
+    public Transform StartOrder;
 
     void Start()
     {
@@ -16,7 +17,15 @@ public class ArrowRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(_Target, Vector3.up);
+        if (!OrderSystem.instance.IsOrderStarted)
+            LookAt(StartOrder);
+        else
+            LookAt(_Target);
+    }
+
+    void LookAt(Transform t)
+    {
+        transform.LookAt(t, Vector3.up);
         transform.rotation *= Quaternion.Euler(90f, 90f, 0);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrderSystem : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public class OrderSystem : MonoBehaviour
     public List<Order> orders = new List<Order>();
     Order activeOrder;
     bool playerIsHere;
+
+    bool isOrderStarted;
+
+    public bool IsOrderStarted => isOrderStarted;
+
+    int currentSceneIndex;
+
+    public GameObject startOrderCanvas;
 
     private void Awake()
     {
@@ -39,6 +48,16 @@ public class OrderSystem : MonoBehaviour
             Debug.Log("Order number " + activeOrder.id + " is complete.");
             //cash
             activeOrder = null;
+
+            // when reached final level
+            if(currentSceneIndex == 4)
+            {
+                // load back to main menu
+                SceneManager.LoadScene(0);
+            }
+            // load next scene
+            SceneManager.LoadScene(currentSceneIndex + 1);
+
         }
     }
     private void OnTriggerEnter(Collider col)
@@ -46,6 +65,7 @@ public class OrderSystem : MonoBehaviour
         if (col.CompareTag("Motorcycle"))
         {
             playerIsHere = true;
+            startOrderCanvas.SetActive(true);
         }
     }
 
@@ -54,12 +74,14 @@ public class OrderSystem : MonoBehaviour
         if (col.CompareTag("Motorcycle"))
         {
             playerIsHere = false;
+            startOrderCanvas.SetActive(false);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        isOrderStarted = false;
     }
 
     // Update is called once per frame
@@ -69,6 +91,7 @@ public class OrderSystem : MonoBehaviour
         {
             addOrder();
             Debug.Log("New Order Started.");
+            isOrderStarted = true;
         }
     }
 }

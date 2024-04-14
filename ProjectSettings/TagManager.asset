@@ -8,6 +8,8 @@ TagManager:
   - MainMenu
   - Motorcycle
   - Levels
+  - GoldDisplay
+  - Start
   layers:
   - Default
   - TransparentFX
