@@ -10,6 +10,7 @@ TagManager:
   - Levels
   - GoldDisplay
   - Start
+  - Plane
   layers:
   - Default
   - TransparentFX

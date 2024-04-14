@@ -17,6 +17,8 @@ public class BikeController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public HealthBar healthBar;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -74,5 +76,15 @@ public class BikeController : MonoBehaviour
             backWheel.WheelCollider.motorTorque = 0;
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Plane"))
+            return;
+        if (collision.gameObject.CompareTag("Finish") || collision.gameObject.CompareTag("Start"))
+            return;
+
+        healthBar.TakeDamage(25f);
     }
 }
