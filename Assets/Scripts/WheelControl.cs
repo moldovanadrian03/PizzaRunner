@@ -7,6 +7,7 @@ using UnityEngine;
 public class WheelControl : MonoBehaviour
 {
     public Transform wheelModel;
+    public Transform handleModel;
 
     [HideInInspector] public WheelCollider WheelCollider;
 
@@ -33,5 +34,11 @@ public class WheelControl : MonoBehaviour
         WheelCollider.GetWorldPose(out position, out rotation);
         wheelModel.transform.position = position;
         wheelModel.transform.rotation = rotation;
+
+        if(handleModel != null)
+        {
+            //float steeringRotation = Mathf.Clamp(wheelModel.localRotation.eulerAngles.y, -30, 30);
+            //handleModel.localRotation = Quaternion.Euler(0f, steeringRotation, 0f);
+        }
     }
 }

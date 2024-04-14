@@ -53541,6 +53541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 8846507795323374428}
+  handleModel: {fileID: 975909876567913179}
   WheelCollider: {fileID: 0}
   steerable: 1
   motorized: 0
@@ -57484,6 +57485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 629234699953822618}
+  handleModel: {fileID: 0}
   WheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
@@ -66096,13 +66098,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4672343036139735413}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.28947166, y: -0.0035148864, z: -0.044637963, w: 0.95613873}
   m_LocalPosition: {x: 0, y: 0.26284683, z: 0.6705645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1867103658}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.589, y: -2.24, z: -6.022}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
